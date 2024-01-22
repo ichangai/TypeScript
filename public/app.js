@@ -1,8 +1,20 @@
+var me = {
+    name: 'Collo',
+    age: 30,
+    speak: function (text) {
+        console.log(text);
+    },
+    spend: function (amount) {
+        console.log(amount);
+        return amount;
+    }
+};
+console.log(me);
 import { Invoice } from './classes/Invoice.js';
 var invOne = new Invoice('Ichan', 'work on website', 240);
 var invTwo = new Invoice('Jackk', 'work on website', 400);
 // console.log(invOne, invTwo)
-invOne.client = 'Mike';
+// invOne.client = 'Mike'
 var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);

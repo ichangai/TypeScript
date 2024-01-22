@@ -1,3 +1,24 @@
+interface IsPerson{
+  name: string,
+  age: number,
+  speak(a: string): void;
+  spend(a: number): number;
+
+}
+
+const me: IsPerson = {
+  name: 'Collo',
+  age: 30,
+  speak(text: string): void {
+    console.log(text)
+  },
+  spend(amount: number): number{
+    console.log(amount)
+    return amount
+  }
+}
+
+console.log(me)
 
 import { Invoice } from './classes/Invoice.js'
 
@@ -5,7 +26,7 @@ const invOne = new Invoice('Ichan', 'work on website', 240)
 const invTwo = new Invoice('Jackk', 'work on website', 400)
 
 // console.log(invOne, invTwo)
-invOne.client = 'Mike'
+// invOne.client = 'Mike'
 
 let invoices: Invoice[] = []
 invoices.push(invOne)
