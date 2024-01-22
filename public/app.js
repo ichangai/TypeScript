@@ -1,8 +1,18 @@
 "use strict";
-let age;
-age = true;
-console.log(age);
-age = 30;
-console.log(age);
-age = { name: 'MM', age: 30 };
-console.log(age);
+let greet;
+greet = () => {
+    console.log("Hello, again");
+};
+const add = (a, b, c = 0) => {
+    if (c) {
+        console.log(a + b + c);
+    }
+    else {
+        console.log(a + b);
+    }
+};
+add(3, 4, 3);
+const minus = (a, b) => {
+    return a + b;
+};
+let result = minus(20, 4);
