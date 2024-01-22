@@ -1,12 +1,22 @@
 "use strict";
-// 
-const logDetails = (uid, item) => {
-    console.log(`${item} has a uid of ${uid}`);
+// example
+let greet;
+greet = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
 };
-const greet = (user) => {
-    console.log(`${user.name} says dope`);
+// greet('jay', 'chao adios')
+// example 2
+let calc;
+calc = (numOne, numTwo, action) => {
+    if (action === '+') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-// const greet = (user: { name: string, uid: string_or_num }) => {
-//   console.log(`${user.name} says dope`)
-// }
-greet({ name: 'Icha', uid: 20 });
+let logDetails;
+logDetails = (ninja) => {
+    console.log(`${ninja.name} is ${ninja.age}`);
+};
+logDetails({ name: 'icha', age: 30 });

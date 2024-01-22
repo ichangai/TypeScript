@@ -1,18 +1,31 @@
-type string_or_num = string | number
-type obj_with_name = { name: string, uid: string_or_num }
-// 
-const logDetails = (uid: string_or_num, item: string) => {
-  console.log(`${item} has a uid of ${uid}`)
+// example
+let greet: (a: string, b: string) => void;
+greet = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`)
 }
 
-const greet = (user: obj_with_name) => {
-  console.log(`${user.name} says dope`)
+// greet('jay', 'chao adios')
+
+
+// example 2
+let calc: (a: number, b: number, c: string) => number;
+
+calc = (numOne: number, numTwo: number, action: string) => {
+  if (action === '+') {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
 }
 
-// const greet = (user: { name: string, uid: string_or_num }) => {
-//   console.log(`${user.name} says dope`)
-// }
+// example 3
 
+type myObject = { name: string, age: number }
 
+let logDetails: (obj: myObject) => void;
 
-greet({ name: 'Icha', uid: 20 })
+logDetails = (ninja: myObject) => {
+  console.log(`${ninja.name} is ${ninja.age}`)
+}
+
+logDetails({name:'icha', age: 30})
