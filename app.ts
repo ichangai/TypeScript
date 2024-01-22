@@ -1,34 +1,62 @@
+// Explicit types
+
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
+
+isLoggedIn = true;
+
 // arrays
 
-let games = ['Mk1', 'COD', 'GTA'];
+let games: string[];
 
-games.push('NFS');
+games = ['Mk1', 'Fifa']
 
 console.log(games);
-// nymber types
 
-let numbers = [1, 2, 3]
+let dopeGames: string[] = [];
 
-numbers.push(10);
+dopeGames.push('Hitman')
+dopeGames.push('COD')
 
-console.log(numbers);
+console.log(dopeGames)
 
-// mixed variable types
+// union types
 
-let mixed = ['Hitman', 3, 'SF', 9]
-
-mixed.push('halo')
-
+// union types for arrays
+let mixed: (string | number)[] = [];
+mixed.push('joe');
+mixed.push(20);
 console.log(mixed);
+// union types for primitive
+let uid: string | number;
 
 
 // objects
 
-let user = {
-  fname: 'K',
-  age: 30,
+let userOne: object;
+
+userOne = {
+  name: 'Mike',
+  age: 28
 };
 
-// user.skills = ['joa', 'fi']
+// console.log(userOne.age)
 
-console.log(user)
+let admin: {
+  name: string,
+  age: number,
+  isLoggedIn: false
+}
+
+admin = {
+  name: 'Icha',
+  age: 30,
+  isLoggedIn: false
+}
+
+console.log(admin.name)
+
+
+
+
