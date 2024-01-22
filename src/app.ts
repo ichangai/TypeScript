@@ -1,38 +1,23 @@
-interface IsPerson{
-  name: string,
-  age: number,
-  speak(a: string): void;
-  spend(a: number): number;
-
-}
-
-const me: IsPerson = {
-  name: 'Collo',
-  age: 30,
-  speak(text: string): void {
-    console.log(text)
-  },
-  spend(amount: number): number{
-    console.log(amount)
-    return amount
-  }
-}
-
-console.log(me)
-
+import { Payment } from './classes/Payment.js';
 import { Invoice } from './classes/Invoice.js'
+import { HasFormatter } from './interfaces/HasFormatter.js'
 
 const invOne = new Invoice('Ichan', 'work on website', 240)
 const invTwo = new Invoice('Jackk', 'work on website', 400)
 
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice('ryu', 'webapp', 200)
+
 // console.log(invOne, invTwo)
 // invOne.client = 'Mike'
 
-let invoices: Invoice[] = []
-invoices.push(invOne)
-invoices.push(invTwo)
+// let invoices: Invoice[] = []
+// invoices.push(invOne)
+// invoices.push(invTwo)
 
-console.log(invoices);
+// console.log(invoices);
 
 const anchor = document.querySelector('a')!;
 if (anchor) {

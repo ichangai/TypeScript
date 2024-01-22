@@ -1,24 +1,15 @@
-var me = {
-    name: 'Collo',
-    age: 30,
-    speak: function (text) {
-        console.log(text);
-    },
-    spend: function (amount) {
-        console.log(amount);
-        return amount;
-    }
-};
-console.log(me);
 import { Invoice } from './classes/Invoice.js';
 var invOne = new Invoice('Ichan', 'work on website', 240);
 var invTwo = new Invoice('Jackk', 'work on website', 400);
+var docOne;
+var docTwo;
+docOne = new Invoice('ryu', 'webapp', 200);
 // console.log(invOne, invTwo)
 // invOne.client = 'Mike'
-var invoices = [];
-invoices.push(invOne);
-invoices.push(invTwo);
-console.log(invoices);
+// let invoices: Invoice[] = []
+// invoices.push(invOne)
+// invoices.push(invTwo)
+// console.log(invoices);
 var anchor = document.querySelector('a');
 if (anchor) {
     // console.log(anchor.href);
