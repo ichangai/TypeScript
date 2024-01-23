@@ -1,47 +1,33 @@
-import { Payment } from './classes/Payment.js';
-import { Invoice } from './classes/Invoice.js'
-import { HasFormatter } from './interfaces/HasFormatter.js'
+// Generics
 
-const invOne = new Invoice('Ichan', 'work on website', 240)
-const invTwo = new Invoice('Jackk', 'work on website', 400)
-
-let docOne: HasFormatter;
-let docTwo: HasFormatter;
-
-docOne = new Invoice('ryu', 'webapp', 200)
-
-// console.log(invOne, invTwo)
-// invOne.client = 'Mike'
-
-// let invoices: Invoice[] = []
-// invoices.push(invOne)
-// invoices.push(invTwo)
-
-// console.log(invoices);
-
-const anchor = document.querySelector('a')!;
-if (anchor) {
-  // console.log(anchor.href);
+const addUID = <T extends object>(obj: T) => {
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
 }
-// console.log(anchor.href);
 
-//const form = document.querySelector('form')!;
-const form = document.querySelector('.new-item-form') as HTMLFormElement;
-// console.log(form.children);
 
-// inputs
-const type = document.querySelector('#type') as HTMLInputElement;
-const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
-const details = document.querySelector('#details') as HTMLInputElement;
-const amount = document.querySelector('#amount') as HTMLInputElement;
+let docOne = addUID({ name: 'yoshi', age: 40 })
 
-form.addEventListener('submit', (e: Event) => {
-  e.preventDefault();
+console.log(docOne.name);
 
-  console.log(
-    type.value,
-    tofrom.value,
-    details.value,
-    amount.valueAsNumber
-  );
-});
+
+// Generics with Interfaces
+
+interface Resource <T>{
+  uid: number;
+  resourceName: string,
+  data: T
+}
+
+
+const payOne: Resource<object> =  {
+  uid: 1,
+  resourceName: 'Icha',
+  data: {name: 'shaun'}
+}
+
+const payTwo: Resource<string[]> = {
+  uid: 1,
+  resourceName: 'Icha',
+  data: ['mk1', 'Fifa']
+}

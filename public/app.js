@@ -1,29 +1,29 @@
-import { Invoice } from './classes/Invoice.js';
-var invOne = new Invoice('Ichan', 'work on website', 240);
-var invTwo = new Invoice('Jackk', 'work on website', 400);
-var docOne;
-var docTwo;
-docOne = new Invoice('ryu', 'webapp', 200);
-// console.log(invOne, invTwo)
-// invOne.client = 'Mike'
-// let invoices: Invoice[] = []
-// invoices.push(invOne)
-// invoices.push(invTwo)
-// console.log(invoices);
-var anchor = document.querySelector('a');
-if (anchor) {
-    // console.log(anchor.href);
-}
-// console.log(anchor.href);
-//const form = document.querySelector('form')!;
-var form = document.querySelector('.new-item-form');
-// console.log(form.children);
-// inputs
-var type = document.querySelector('#type');
-var tofrom = document.querySelector('#tofrom');
-var details = document.querySelector('#details');
-var amount = document.querySelector('#amount');
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
-});
+"use strict";
+// Generics
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var addUID = function (obj) {
+    var uid = Math.floor(Math.random() * 100);
+    return __assign(__assign({}, obj), { uid: uid });
+};
+var docOne = addUID({ name: 'yoshi', age: 40 });
+console.log(docOne.name);
+var payOne = {
+    uid: 1,
+    resourceName: 'Icha',
+    data: { name: 'shaun' }
+};
+var payTwo = {
+    uid: 1,
+    resourceName: 'Icha',
+    data: ['mk1', 'Fifa']
+};
